@@ -1,12 +1,7 @@
 #include <stdio.h>
-
-int main(void) {
+int main(void)
+{
 	int a, b, c, pass;
-
-	printf(
-		"Please input 3 three integers, following these rules:\n"
-		"(Inclusively) A and B must be between 0 and 10 and C between 0 and 5.\n"
-	);
 
 	scanf("%i%i%i", &a, &b, &c);
 
