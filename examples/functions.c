@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 /* Functions cannot be declared within other functions */
-int foo()
+int foo(int fighter)
 {
-	return 1;
+	return fighter;
 }
 
 int main()
 {
-	int x = foo();
+	int i = foo(21);
 
-	printf("%d", x);
+	printf("%d\n", i);
 
 	return 0;
 }
