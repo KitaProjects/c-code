@@ -1,31 +1,21 @@
 #include <stdio.h>
 
 int main(void) {
-	float a, b;
-	int n;
+	int a, b, n;
 
-	scanf("%f%f%d", &a, &b, &n);
+	scanf("%d%d%d", &a, &b, &n);
 
-	float result = a / b;
+	int remainder = a % b;
 
-	char str[100];
-	sprintf(str, "%.10f", result);
-
-	char c;
-	int i, j, decFound;
-	for(i = 0, j = 0; j != n; i++) {
-		c = str[i];
-		
-		if (c == '.') {
-			decFound = 1;
-		}
-
-		if (decFound == 1) {
-			j++;
-		}
+	/* emulating division by hand */
+	int i, digit;
+	for (i=0; i<n; i++) {
+		int carry = remainder * 10;
+		digit = carry / b;
+		remainder = carry % b;
 	}
 
-	printf("%c\n", str[i]);
+	printf("%d\n", digit);
 
 	return 0;
 }
