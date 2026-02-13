@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 int main(void) {
-	/* assuming that '\0' is included in this count */
+	/* 100 digits not including '\0' */
 	char inp_a[101], inp_b[101], result[102];
 
 	scanf("%s\n%s", inp_a, inp_b);
 
 	/* size of inputs in digits */
-	int i_a = 0, i_b = 0, i_r = 0, carry = 0;
+	int i_a = 0, i_b = 0;
 	while (inp_a[i_a] != '\0') i_a++;
 	while (inp_b[i_b] != '\0') i_b++;
 
@@ -15,7 +15,7 @@ int main(void) {
 	i_a--;
 	i_b--;
 
-	int sum;
+	int i_r = 0, carry = 0, sum;
 	while(i_a >= 0 || i_b >= 0 || carry > 0) {
 		int digit_a = 0, digit_b = 0;
 
@@ -37,7 +37,7 @@ int main(void) {
 		i_r++;
 	}
 
-	/* reverse print backwards stored result[] */
+	/* reverse print for backwards stored result[] */
 	for (i_r-- ; i_r >= 0; i_r--) {
 		printf("%c", result[i_r]);
 	}
