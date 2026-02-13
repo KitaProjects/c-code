@@ -3,7 +3,6 @@
 int main(void) {
 	char input[200], c;
 
-	/* create single string and keep track of length */
 	int i=0;
 	while (scanf("%c", &c) != EOF) {
 		input[i] = c;

@@ -8,7 +8,6 @@ int main(void) {
 	float area, circ, squareArea;
 	float totalArea = 0, totalCirc = 0, totalSquareArea = 0;
 
-	/* c1 and c2 are the radius of two circles */
 	scanf("%d%d", &c1, &c2);
 
 	for (r=c1; r<=c2; r++) {

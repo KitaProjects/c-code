@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 int main(void) {
-	/* 100 digits not including '\0' */
 	char inp_a[101], inp_b[101], result[102];
 
 	scanf("%s\n%s", inp_a, inp_b);
