@@ -8,9 +8,9 @@ int main(void) {
 	int remainder = a % b;
 
 	/* emulating division by hand */
-	int i, digit;
+	int i, digit, carry;
 	for (i=0; i<n; i++) {
-		int carry = remainder * 10;
+		carry = remainder * 10;
 		digit = carry / b;
 		remainder = carry % b;
 	}
