@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-	char input[200], c;
+	char input[201], c;
 
 	int i=0;
 	while (scanf("%c", &c) != EOF) {
