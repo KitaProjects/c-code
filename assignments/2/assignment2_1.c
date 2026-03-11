@@ -9,6 +9,7 @@ void compress() {
 	count = 1;
 	while (next != EOF) {
 		next = getchar();
+
 		if (current_char == next) {
 			count++;
 		} else {
@@ -17,8 +18,7 @@ void compress() {
 			}
 
 			if (count >= 3) {
-				/* NOTE: For illustration purposes right now, prints [#*** -> '*' ocurred 4 times] which seems odd but I think is correct */
-				printf(" -> '%c' ocurred %d times\n", current_char, count);
+				printf("%02X", count);
 			}
 
 			current_char = next;
@@ -52,6 +52,6 @@ int main(void) {
 int hexToInt(int c) {
 	if (c >= '0' && c <= '9') return c - '0';
 	if (c >= 'A' && c <= 'F') return c - 'A' + 10;
-	// Incorrect format
+	
 	return 1;
 }
