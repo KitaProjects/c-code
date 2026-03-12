@@ -40,6 +40,8 @@ void compress() {
 	char current_char, next;
 	int count;
 
+	if (scanf("%c", &current_char) == EOF) return;
+
 	count = 1;
 	while (scanf("%c", &next) != EOF) {
 		if (current_char == next) {
@@ -92,6 +94,8 @@ void expand() {
 void report() {
 	char current_char, next;
 	int count, original, compressed, efficiency;
+
+	if (scanf("%c", &current_char) == EOF) return;
 
 	original = 1;
 	compressed = 0;
