@@ -11,7 +11,7 @@ int hexToInt(int c) {
 	return 0;
 }
 
-/* prints copies of characters in the given hex format (2 uppercase, 0 padded) */
+/* prints copies of characters in the given hex format */
 void printCompress(char c, int count) {
 	for (int i = 0; i < count && i < 3; i++) {
 		printf("%c", c);
@@ -22,7 +22,7 @@ void printCompress(char c, int count) {
 	}
 }
 
-/* returns what the size of compressed copies of chars would be (3 chars + 2 hex) */
+/* returns size of what compressed chars would be */
 int reportCompress(char c, int count) {
 	if (count >= 3) {
 		return 5;
@@ -64,6 +64,7 @@ void expand() {
 			printf("%c", c1);
 			break;
 		}
+
 		if (scanf("%c", &c3) == EOF) {
 			printf("%c", c1);
 			printf("%c", c2);
@@ -73,20 +74,21 @@ void expand() {
 		if (c1 == c2 && c1 == c3) {
 			scanf("%c", &h1);
 			scanf("%c", &h2);
-			count = hexToInt(h1) * 16 + hexToInt(h2);
+			count = (hexToInt(h1) * 16) + hexToInt(h2);
 
 			for (int i = 0; i < count; i++) {
 				printf("%c", c1);
 			}
 		} else {
 			printf("%c", c1);
+
 			ungetc(c3, stdin);
 			ungetc(c2, stdin);
 		}
 	}
 }
 
-
+/* similar to compress() but keeps track instead of printing */
 void report() {
 	char current_char, next;
 	int count, original, compressed, efficiency;
@@ -137,7 +139,6 @@ int main(void) {
 			report();
 			break;
 		default:
-			printf("[ERROR] Unknown command, expected 'C', 'E' or 'R' but got: '%c'\n", command_char);
 	}
 
 	return 0;
